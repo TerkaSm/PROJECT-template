@@ -1,0 +1,17 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mx;
+
+.header {
+    color: v.$color-white;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1600px;
+}
+
+.logo {
+    width: 10vw;
+    min-width: 60px;
+    max-width: 100px;
+    margin-left: clamp(v.$spacer, 10vw, 6.25rem);
+    margin-top: 0;
+}

@@ -1,0 +1,85 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mx;
+
+
+.mobile-nav {
+    position: relative;
+
+    @include mx.media-min(1170px) {
+        display: none;
+    }
+
+    &__icon {
+        align-self: first baseline;
+        width: 40px;
+        z-index: 2000;
+        margin: v.$spacer;
+    }
+
+    &__icon-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 3000;
+        opacity: 0;
+        width: 0;
+    }
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__nav {
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: v.$color-secondary-600;
+        background-size: 100%;
+        z-index: 2000;
+        opacity: 0;
+        width: 0;
+    }
+
+    &__list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        list-style: none;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    &__item {
+        padding: 1rem;
+    }
+
+    &__link {
+        color: v.$color-white;
+        font-family: v.$font-special;
+        font-size: 1.2rem;
+        padding: 1rem 0.5rem 0.5rem 0.5rem;
+        cursor: pointer;
+
+        &:hover, 
+        &:active {
+            transform: scale(1.1);
+        }
+    }
+
+
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        width: 100%;
+    }
+
+    &__checkbox:checked ~ &__icon-close {
+        opacity: 1;
+        width: 50%;
+    }
+
+}
+
+

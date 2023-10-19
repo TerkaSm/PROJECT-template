@@ -1,0 +1,52 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mx;
+
+
+.card-course {
+    background-color: v.$color-secondary-700;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+
+    @include mx.media-min(750px) {
+        flex-direction: row;
+    }
+
+    &__fig {
+        position: relative;
+        flex: 30%;
+
+        @include mx.media-min(750px) {
+            flex: 50%;
+        }
+    }
+
+    &__img {
+        //position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    &__content {
+        flex: 70%;
+        padding: clamp(v.$spacer, 5vw, v.$spacer-double);
+        padding-bottom: v.$spacer;
+
+        @include mx.media-min(750px) {
+            flex: 50%;
+        }
+    }
+
+    &__title {
+        margin: 0 0 1.5rem 0;
+    }
+
+    &__text {
+        font-size: 1rem;
+    }
+}

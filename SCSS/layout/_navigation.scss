@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mx;
+
+
+
+.navigation {
+    display: none;
+    padding-top: v.$spacer;
+    padding-right: v.$spacer;
+
+    @include mx.media-min(1170px) {
+        display: block;
+    }
+
+    &__list {
+        text-decoration: none;
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        margin: 0 7px;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &__link {
+        color: v.$color-white;
+        font-family: v.$font-special;
+        font-size: 1.2rem;
+        padding: 10px 25px;
+    }
+}

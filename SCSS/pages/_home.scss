@@ -1,0 +1,62 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mx;
+
+
+// HERO
+
+.section-hero {
+    height: 80vh;
+    min-height: 670px;
+    max-height: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacer-double;
+
+    @include mx.media-min(420px) {
+        min-height: 800px;
+    }
+
+    @include mx.media-min(600px) {
+        min-height: 900px;
+    }
+
+    @include mx.media-min(750px) {
+        flex-direction: row;
+        padding-top: v.$spacer-double;
+        gap: v.$spacer-large;
+        align-items: center;
+        min-height: 670px;
+    }
+
+    &__content {
+        flex: 1;
+    }
+
+    &__fig {
+        flex: 1;
+        max-width: 80vw;
+        
+        @include mx.media-min(750px) {
+            padding-top: v.$spacer-double;
+        }
+    }
+
+    &__img {
+        min-width: 300px;
+        max-width: 598px;
+        width: 100%;
+    }
+
+}
+
+
+
+// COURSES
+
+.section-courses {
+
+    &__courses {
+
+    }
+}
